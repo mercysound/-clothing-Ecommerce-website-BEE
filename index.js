@@ -25,8 +25,12 @@ mongoose.connect(mongooseUri)
 
 // API Creation (Api endpoint)
 
-app.get("/", (req, res)=>{
-    res.send("Express App is Running")
+// app.get("/", (req, res)=>{
+//     res.send("Express App is Running")
+// })
+// for the sake of the deploy fe&be
+app.get("/*", (req, res)=>{
+    res.sendFile(__dirname+"/build/index.html")
 })
 
 // Image Storage Engine function
